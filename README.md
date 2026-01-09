@@ -1,9 +1,9 @@
 # 🧹 Data Cleaning Using Python Pandas
 
 ## 📌 Project Overview
-This project focuses on **data cleaning using Python and Pandas** with a real-world dataset. The goal is to transform raw, messy data into a clean, reliable, and analysis-ready format. Data cleaning is a critical step in any data science workflow, as poor data quality can lead to incorrect insights and unreliable models.
+This project focuses on **data cleaning using Python and Pandas** performed entirely in a **Jupyter Notebook (Anaconda environment)**. Using a real-world **Airbnb dataset**, the notebook walks through a structured, step-by-step data cleaning workflow with detailed comments explaining **what each operation does and why it is used at that stage**.
 
-This project is inspired by a hands-on tutorial that demonstrates practical data cleaning techniques on an **Airbnb dataset sourced from Kaggle**.
+The project demonstrates how raw, messy data can be transformed into a clean, reliable, and analysis-ready dataset suitable for further analysis or machine learning.
 
 ---
 
@@ -37,74 +37,46 @@ This dataset contains several common data issues such as missing values, inconsi
 - Python
 - Pandas
 - Anaconda Distribution
-- Jupyter Notebook (used to perform all Python and Pandas data cleaning operations)
+- Jupyter Notebook (all data cleaning steps executed and documented cell-by-cell)
 
 ---
 
 ## 🔍 Data Cleaning Steps Performed
 
-### 1️⃣ Handling Missing Values
-- Identified missing values using `isnull()` and `sum()`
-- Dropped rows or columns with excessive missing data where appropriate
-- Filled missing numerical values using:
-  - Mean
-  - Median
-- Filled missing categorical values using:
-  - Mode
-  - Constant values like `"Unknown"`
-- Handled Airbnb-specific missing values such as:
-  - `reviews_per_month`
-  - `last_review`
+The following steps were performed sequentially in the Jupyter Notebook, with detailed comments added to each code cell to explain the purpose and reasoning behind every operation.
 
----
+### 1️⃣ Loading the Dataset
+- Loaded the raw Airbnb CSV file into a pandas DataFrame
+- Established the starting point for inspection and cleaning
 
-### 2️⃣ Data Type Conversion
-- Inspected data types using `df.info()` and `df.dtypes`
-- Converted:
-  - Price columns from object to numeric
-  - Date columns to `datetime`
-  - Integer-based columns like `minimum_nights` and `number_of_reviews`
-- Used error handling during conversions to avoid crashes
+### 2️⃣ Initial Data Inspection
+- Examined column names and dataset structure
+- Reviewed data types and basic information to identify potential issues
 
----
+### 3️⃣ Handling Missing Values
+- Identified missing values across columns
+- Applied appropriate strategies such as dropping, filling with statistical measures, or using placeholder values based on context
 
-### 3️⃣ Data Transformation & Feature Engineering
-- Extracted components from date columns (year, month, day)
-- Created derived features when needed
-- Cleaned text data by:
-  - Converting text to lowercase
-  - Removing extra spaces
-  - Standardizing categorical values
+### 4️⃣ Data Type Cleaning
+- Converted incorrect data types (e.g., prices, dates)
+- Ensured numerical and categorical columns were properly formatted
 
----
+### 5️⃣ Text and Categorical Data Cleaning
+- Standardized text values
+- Removed unnecessary spaces and inconsistencies
+- Unified category labels for consistency
 
-### 4️⃣ Renaming Columns
-- Renamed columns to improve readability and consistency
-- Simplified long column names
-- Followed a clear and consistent naming convention
+### 6️⃣ Column Renaming
+- Renamed columns for clarity and readability
+- Applied consistent naming conventions
 
----
+### 7️⃣ Duplicate Record Handling
+- Identified duplicate rows
+- Removed duplicates while preserving valid records
 
-### 5️⃣ Removing Duplicate Records
-- Identified duplicate rows using `duplicated()`
-- Removed duplicates using `drop_duplicates()`
-- Retained appropriate records using `keep` parameter
-
----
-
-### 6️⃣ Handling Outliers
-- Identified outliers using statistical methods and visual inspection
-- Focused on columns such as:
-  - Price
-  - Minimum nights
-- Decided whether to cap, transform, or remove extreme values based on context
-
----
-
-### 7️⃣ Data Validation & Consistency Checks
-- Ensured logical consistency in numerical columns
-- Verified geographical values like latitude and longitude
-- Standardized categorical values such as room types
+### 8️⃣ Data Validation and Consistency Checks
+- Verified logical consistency in numerical values
+- Ensured geographical and categorical data fell within valid ranges
 
 ---
 
