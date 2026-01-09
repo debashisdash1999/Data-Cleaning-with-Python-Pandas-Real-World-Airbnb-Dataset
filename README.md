@@ -36,7 +36,6 @@ This dataset contains several common data issues such as missing values, inconsi
 ## 🛠 Tools & Libraries Used
 - Python
 - Pandas
-- NumPy
 - Anaconda Distribution
 - Jupyter Notebook (used to perform all Python and Pandas data cleaning operations)
 
